@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/electron/index.js",
   "scripts": {
-    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
-    "react-start": "react-scripts start",
+    "start": "PORT=8000 react-scripts start",
+    "electron-start": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron . --no-sandbox\"",
     "build": "react-scripts build",
     "electron-pack": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,10 +19,23 @@
     "cross-env": "^7.0.3",
     "electron": "^35.2.1",
     "electron-builder": "^26.0.12",
+    "electron-is-dev": "^3.0.1",
     "ffmpeg-static": "^5.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-scripts": "^5.0.1",
     "wait-on": "^8.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
