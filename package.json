@@ -2,8 +2,12 @@
   "name": "user-workspace",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/electron/index.js",
   "scripts": {
+    "start": "concurrently \"cross-env BROWSER=none npm run react-start\" \"wait-on http://localhost:3000 && electron .\"",
+    "react-start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron-pack": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
