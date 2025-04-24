@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import './App.css';
 import VideoSettings from './components/VideoSettings';
 import AudioSettings from './components/AudioSettings';
 import FileInput from './components/FileInput';
